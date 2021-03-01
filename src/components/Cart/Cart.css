@@ -1,0 +1,8 @@
+.cart{
+    text-align: left;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    margin: 5px;
+    padding: 5px;
+}

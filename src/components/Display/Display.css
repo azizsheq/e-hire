@@ -1,0 +1,16 @@
+.display{
+    color: black;
+    /* border: 1px solid red; */
+    border-bottom: 1px solid red;
+    margin: 25px;
+}
+
+.display-text{
+    text-align: left;
+    color: black;
+    /* border: 1px solid black; */
+}
+
+.display-pic{
+    
+}
