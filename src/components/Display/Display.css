@@ -10,7 +10,14 @@
     color: black;
     /* border: 1px solid black; */
 }
-
+.card-header:hover{
+    background-color: #008CBA;
+}
 .display-pic{
-    
+
+}
+
+.add-btn:hover{
+    background-color: #008CBA !important;
+    font-weight: 500;
 }

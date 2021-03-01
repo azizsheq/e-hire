@@ -1,4 +1,6 @@
 import './Cart.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 import React from 'react';
 
@@ -20,14 +22,20 @@ const Cart = (props) => {
     return (
         <div className="container sticky-top cart">
             <div >
-                <h2 style={{textAlign: 'center'}}>-Your Cart-</h2>
+                <h2 style={{textAlign: 'center'}}>Your Cart  <FontAwesomeIcon icon={faCartPlus} /></h2>
                 <div>
-                    <h4>Added Player Name -</h4>
-                    <h5>{nameString}</h5>
+                    <h5>Player(s) Count : <b>{cart.length}</b></h5>
                 </div>
                 <div>
-                    <h4>Total Budget -</h4>
-                    <h5>$ {numberWithCommas(totalBudget)}.00</h5>
+                    <h5>Player(s) Name -</h5>
+                    <h6>{nameString}</h6>
+                </div>
+                <div>
+                    <h5>Total Budget -</h5>
+                    <h6>$ {numberWithCommas(totalBudget)}.00</h6>
+                </div>
+                <div style={{textAlign: 'right'}}>
+                    <button className="btn btn-primary proceed-btn">Click To Proceed</button>
                 </div>
             </div>
         </div>

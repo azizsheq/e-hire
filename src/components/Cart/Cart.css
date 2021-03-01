@@ -6,3 +6,8 @@
     margin: 5px;
     padding: 5px;
 }
+
+.proceed-btn:hover{
+    background-color: #f44336 !important;
+    font-weight: 500;
+}

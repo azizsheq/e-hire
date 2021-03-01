@@ -5,7 +5,7 @@ const Header = () => {
         <div className="header">
             <nav class="navbar navbar-expand-lg navbar-light bg-info">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/home">APP NAME</a>
+                    <a class="navbar-brand" href="/home">e-hire</a>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
