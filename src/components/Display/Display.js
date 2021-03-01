@@ -1,15 +1,20 @@
 import './Display.css'
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 
 const Display = (props) => {
     // console.log(props.user.id);
+
     // destructuring the props.user object
     const {id, name, age, nationality, position, club, price, picture} = props.user;
     // console.log(id);
 
-    function numToMil (labelValue) {
+    // using useState to disable the add button
+    const [isClicked, setIsClicked] = useState(false);
+
+    // a function to convert numbers into short form
+    const numToMil = (labelValue) => {
 
         // Nine Zeroes for Billions
         return Math.abs(Number(labelValue)) >= 1.0e+9
@@ -28,7 +33,8 @@ const Display = (props) => {
     
     }
 
-    function numberWithCommas(x) {
+    // a function to convert numbers into comma separation
+    const numberWithCommas = (x) => {
         let num = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return num;
     }
@@ -53,7 +59,16 @@ const Display = (props) => {
                 <div className="col-4 display-pic">
                     <img src={picture} all='image'></img>
                     <h6><FontAwesomeIcon icon={faDollarSign} />{numberWithCommas(price)}.00</h6>
-                    <button className="btn btn-success add-btn" onClick={() => props.handleAddedUsers(props.user)}><FontAwesomeIcon icon={faPlus} /> Click to Add</button>
+                    <button 
+                        className="btn btn-success add-btn" 
+                        disabled={isClicked} 
+                        onClick={() => {
+                            props.handleAddedUsers(props.user)
+                            setIsClicked(true)
+                            }
+                            }>
+                            {isClicked ? "Already Added" : "Click to Add"}
+                    </button>
                 </div>
             </div>
         </div>
